@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+    nginxproxy:
+        image: nginx:stable
+        ports:
+            - "80:80"
+        restart: always
+        volumes:
+            - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+
+    django:
+        depends_on:
+            - nginxproxy
+        image: my-django-app:1.0
+        restart: always
