@@ -14,3 +14,12 @@ services:
             - nginxproxy
         image: my-django-app:1.0
         restart: always
+    
+    mysqldb:
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: test
+            MYSQL_DATABASE: test
+            MYSQL_USER: test
+            MYSQL_PASSWORD: test
