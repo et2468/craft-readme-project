@@ -16,6 +16,8 @@ services:
         restart: always
     
     mysqldb:
+        depends_on:
+            - django
         image: mysql
         restart: always
         environment:
